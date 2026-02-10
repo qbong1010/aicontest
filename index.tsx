@@ -242,6 +242,36 @@ const App = () => {
               </ul>
             </div>
 
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold flex items-center gap-2 text-indigo-300">
+                <CheckCircle2 className="w-5 h-5" />
+                내용 구성(추천)
+              </h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 ml-2 leading-relaxed">
+                <li>
+                  기존 업무의 문제점 혹은 개선가능여지 등의 <span className="font-bold text-white">문제의식</span>
+                </li>
+                <li>
+                  기존 방식 vs 개선된 방식의 <span className="font-bold text-white">비교</span>
+                </li>
+                <li>
+                  시간 · 정확도 · 심리적 이점 등을 <span className="font-bold text-white underline decoration-indigo-500/50 decoration-2 underline-offset-4">투입 대비 결과물(ROI) 관점</span>에서 비교
+                </li>
+                <li>
+                  개선된 기술(혹은 문화)를 도입하기 <span className="font-bold text-white underline decoration-indigo-500/50 decoration-2 underline-offset-4">투자해야하는 리소스</span>(인적, 물적 자원 등)
+                </li>
+              </ul>
+              
+              <div className="mt-4 p-5 bg-white/5 rounded-xl border border-white/10 space-y-2">
+                <p className="text-gray-300">
+                  정답이나 정형화된 구조는 없으며, 프로그램을 만들어야하는 것도 <span className="font-bold text-white underline decoration-indigo-500/50 decoration-2 underline-offset-4">절대 아닙니다</span>.
+                </p>
+                <p className="text-gray-300">
+                  완성도보다 <span className="font-bold text-white">문제 정의, 접근 방식, 개선 효과</span> 등을 중심으로 정리하는 것을 권장합니다.
+                </p>
+              </div>
+            </div>
+
             <div className="p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-xl flex gap-4 items-start">
               <AlertCircle className="w-6 h-6 text-yellow-500 shrink-0 mt-1" />
               <div>
