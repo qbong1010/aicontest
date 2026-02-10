@@ -9,6 +9,7 @@ import {
   CheckCircle2,
   AlertCircle,
 } from "lucide-react";
+import SurveyChart from "./src/components/SurveyChart";
 
 const App = () => {
   return (
@@ -68,6 +69,8 @@ const App = () => {
           </div>
         </div>
       </section>
+
+
 
       {/* Why Section */}
       <section className="py-20 px-6 relative z-10 text-center">
@@ -176,12 +179,12 @@ const App = () => {
         </div>
       </section>
 
-      {/* Participation Guide */}
+      {/* Detail Guide */}
       <section className="py-24 px-6 relative z-10">
         <div className="max-w-4xl mx-auto glass-card rounded-3xl p-8 md:p-12 overflow-hidden relative">
           <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
 
-          <h2 className="text-3xl font-bold mb-8 relative z-10">참가 가이드</h2>
+          <h2 className="text-3xl font-bold mb-8 relative z-10">세부사항안내</h2>
 
           <div className="space-y-8 relative z-10">
             <div className="space-y-4">
@@ -251,6 +254,14 @@ const App = () => {
               </div>
             </div>
           </div>
+        </div>
+
+      </section>
+
+      {/* Survey Status Section */}
+      <section className="py-12 px-6 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <SurveyChart />
         </div>
       </section>
 
