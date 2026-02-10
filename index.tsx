@@ -12,17 +12,23 @@ import {
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-x-hidden selection:bg-indigo-500/30">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden">
-        {/* Background Gradients */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] -z-10" />
-        <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-violet-600/10 rounded-full blur-[100px] -z-10" />
+    <div className="min-h-screen bg-slate-950 text-white overflow-x-hidden selection:bg-indigo-500/30">
+      {/* Background Effects */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-indigo-600/30 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-violet-600/20 rounded-full blur-[100px]" />
+      </div>
 
-        <div className="max-w-4xl mx-auto text-center space-y-8 z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm text-gray-300 font-medium">
+      {/* Hero Section */}
+      <section className="relative min-h-[90vh] flex items-center justify-center px-6 overflow-hidden z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 backdrop-blur-sm animate-fade-in">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            </span>
+            <span className="text-sm text-indigo-200 font-medium">
               참가 의향 조사 진행 중 (~2/20)
             </span>
           </div>
@@ -30,15 +36,17 @@ const App = () => {
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight animate-fade-in-delay-1">
             도시단지1부
             <br />
-            <span className="gradient-text">AI 업무혁신 경진대회</span>
+            <span className="bg-gradient-to-r from-indigo-300 via-white to-purple-300 bg-clip-text text-transparent drop-shadow-lg">
+              AI 업무혁신 경진대회
+            </span>
           </h1>
 
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2">
-            단순히 "잘 만든 아이디어"가 아닌, <br className="md:hidden" />
-            <span className="text-indigo-400 font-semibold">
-              "바로 써먹을 수 있는 업무 혁신"
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2 break-keep">
+            기술 경쟁이 아닌,<br className="hidden md:block" />
+            <span className="text-indigo-400 font-semibold shadow-indigo-500/20 drop-shadow-sm">
+              "업무를 재해석하고 시간을 지배하는 경험"
             </span>
-            을 찾습니다.
+            을 공유합니다.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-fade-in-delay-2">
@@ -46,14 +54,14 @@ const App = () => {
               href="https://forms.gle/KPMj3YhUWftA1YTY6"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative px-8 py-4 bg-white text-black font-bold rounded-xl hover:bg-gray-100 transition-all flex items-center gap-2"
+              className="group relative px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-indigo-50 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
             >
               참가 신청하기
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="#schedule"
-              className="px-8 py-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all font-medium"
+              className="px-8 py-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all font-medium text-slate-200"
             >
               일정 확인하기
             </a>
@@ -61,8 +69,49 @@ const App = () => {
         </div>
       </section>
 
+      {/* Why Section */}
+      <section className="py-20 px-6 relative z-10 text-center">
+        <div className="max-w-4xl mx-auto bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10 backdrop-blur-md relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px]" />
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-violet-500/10 rounded-full blur-[80px]" />
+          
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 relative z-10">
+            AI 경진대회는 왜 하는건가요?
+          </h2>
+          
+          <div className="space-y-6 text-lg text-slate-300 leading-relaxed break-keep relative z-10">
+            <p>
+              이번 AI 경진대회는 <span className="text-indigo-300 font-semibold">기술 경쟁이나 개발 역량을 평가하기 위한 자리</span>가 아닙니다.
+            </p>
+            <p>
+              우리가 실제로 수행하고 있는 업무를 기준으로, <br className="hidden md:block" />
+              <span className="text-white font-semibold">"이 일은 AI로 어떻게 바꿔볼 수 있을까?"</span>를 <br className="hidden md:block" />
+              각자의 방식으로 실험해보는, 그리고 공유하는 과정에 가깝습니다.
+            </p>
+            
+            <div className="h-px w-20 bg-white/10 mx-auto my-8" />
+            
+            <p>
+              사실 많은 분들이 업무에 AI를 많이 사용하고 계시거나, <br className="hidden md:block" />
+              사용하기 위해 노력하고 계실 것이라 생각됩니다.
+            </p>
+            <p>
+              이번 기회에 개인과 팀이 <span className="text-indigo-300 font-semibold">업무를 분해하고 재해석해보는 경험</span>을 제공하고자 합니다. <br className="hidden md:block" />
+              개인의 노하우를 발굴하고, 비효율을 개선하는 시간이 될 것입니다.
+            </p>
+            
+            <div className="mt-8 p-6 bg-indigo-500/10 rounded-xl border border-indigo-500/20">
+              <p className="font-medium text-white">
+                급변하는 시대에서 <span className="text-indigo-400">스스로의 업무 시간을 지배</span>할 수 있는 <br className="hidden md:block" />
+                AI 활용 감각을 축적할 수 있는 기회를 제공하기 위해 노력하겠습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Intro Section */}
-      <section className="py-24 px-6 relative">
+      <section className="py-24 px-6 relative z-10">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           <FeatureCard
             icon={<Users className="w-8 h-8 text-blue-400" />}
@@ -83,7 +132,7 @@ const App = () => {
       </section>
 
       {/* Process / Timeline */}
-      <section id="schedule" className="py-24 px-6 bg-white/5 relative">
+      <section id="schedule" className="py-24 px-6 bg-slate-900/50 relative z-10 border-y border-white/5">
         <div className="max-w-5xl mx-auto space-y-16">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold">진행 일정</h2>
@@ -128,7 +177,7 @@ const App = () => {
       </section>
 
       {/* Participation Guide */}
-      <section className="py-24 px-6">
+      <section className="py-24 px-6 relative z-10">
         <div className="max-w-4xl mx-auto glass-card rounded-3xl p-8 md:p-12 overflow-hidden relative">
           <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
 
@@ -221,12 +270,7 @@ const App = () => {
             >
               참가신청
             </a>
-            <a
-              href="#"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              문의하기
-            </a>
+
           </div>
         </div>
       </footer>
@@ -263,7 +307,7 @@ const TimelineItem = ({ date, title, desc, status }) => (
     <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-xl border border-white/5">
       <div className="flex items-center justify-between mb-2">
         <time
-          className={`font-mono text-sm ${status === "current" ? "text-indigo-400 font-bold" : "text-gray-500"}`}
+          className={`font-mono text-lg md:text-xl font-bold ${status === "current" ? "text-indigo-400" : "text-gray-300"}`}
         >
           {date}
         </time>
