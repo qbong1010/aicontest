@@ -52,7 +52,7 @@ const App = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-fade-in-delay-2">
             <a
-              href="https://forms.gle/KPMj3YhUWftA1YTY6"
+              href="https://forms.gle/xBG5iQMjGQCS4B7M8"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-indigo-50 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
