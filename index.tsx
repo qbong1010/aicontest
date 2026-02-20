@@ -51,15 +51,12 @@ const App = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 animate-fade-in-delay-2">
-            <a
-              href="https://forms.gle/xBG5iQMjGQCS4B7M8"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-indigo-50 transition-all flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
+            <button
+              disabled
+              className="px-8 py-4 bg-slate-700 text-slate-400 font-bold rounded-xl flex items-center gap-2 cursor-not-allowed"
             >
-              참가 신청하기
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+              신청마감
+            </button>
             <a
               href="#schedule"
               className="px-8 py-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all font-medium text-slate-200"
@@ -305,12 +302,9 @@ const App = () => {
             </p>
           </div>
           <div className="flex gap-8">
-            <a
-              href="https://forms.gle/KPMj3YhUWftA1YTY6"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              참가신청
-            </a>
+            <span className="text-gray-600">
+              신청마감
+            </span>
 
           </div>
         </div>
