@@ -30,7 +30,7 @@ const App = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
             </span>
             <span className="text-sm text-indigo-200 font-medium">
-              참가 의향 조사 진행 중 (~2/20)
+              예선 결과물 제출 진행 중 (~4/30)
             </span>
           </div>
 
@@ -146,19 +146,19 @@ const App = () => {
               date="~ 2.10 (화) 16:00"
               title="사전 참가 조사 및 팀 구성"
               desc="Google 설문을 통한 참가 의향 및 성향 조사, AI 기반 팀 매칭 진행"
-              status="current"
+              status="completed"
             />
             <TimelineItem
               date="2.20 (금)"
               title="팀 구성 확정"
               desc="최종 팀 배정 완료 및 공지"
-              status="upcoming"
+              status="completed"
             />
             <TimelineItem
-              date="~ 4.30 (목)"
+              date="2.23(월)~ 4.30 (목)"
               title="예선 결과물 제출"
               desc={`아이디어 제안서(PPT) 제출.\n기존 업무 대비 개선 포인트 및 기대 성과 중심`}
-              status="upcoming"
+              status="current"
             />
             <TimelineItem
               date="5.14 (목)"
