@@ -203,8 +203,10 @@ const App = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <TeamSection />
+      {/* Team Section - hidden but kept in code */}
+      <div className="hidden">
+        <TeamSection />
+      </div>
 
       {/* Detail Guide */}
       <section className="py-24 px-6 relative z-10 overflow-hidden">
