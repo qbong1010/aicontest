@@ -8,8 +8,56 @@ import {
   ArrowRight,
   CheckCircle2,
   AlertCircle,
+  FileText,
+  ExternalLink,
 } from "lucide-react";
 import SurveyChart from "./src/components/SurveyChart";
+import TeamSection from "./src/components/TeamSection";
+
+const timelineEvents = [
+  {
+    startDate: new Date(2025, 0, 1),
+    endDate: new Date(2026, 1, 10, 16, 0),
+    date: "~ 2.10 (화) 16:00",
+    title: "사전 참가 조사 및 팀 구성",
+    desc: "Google 설문을 통한 참가 의향 및 성향 조사, AI 기반 팀 매칭 진행",
+  },
+  {
+    startDate: new Date(2026, 1, 20),
+    endDate: new Date(2026, 1, 20, 23, 59),
+    date: "2.20 (금)",
+    title: "팀 구성 확정",
+    desc: "최종 팀 배정 완료 및 공지",
+  },
+  {
+    startDate: new Date(2026, 1, 23),
+    endDate: new Date(2026, 3, 30, 23, 59),
+    date: "2.23(월)~ 4.30 (목)",
+    title: "예선 결과물 제출",
+    desc: `아이디어 제안서(PPT) 제출.\n기존 업무 대비 개선 포인트 및 기대 성과 중심`,
+  },
+  {
+    startDate: new Date(2026, 4, 14),
+    endDate: new Date(2026, 4, 14, 23, 59),
+    date: "5.14 (목)",
+    title: "예선 결과 발표",
+    desc: "블라인드 심사를 통해 상위 10개 팀/개인 선정",
+  },
+  {
+    startDate: new Date(2026, 5, 18),
+    endDate: new Date(2026, 5, 18, 23, 59),
+    date: "6.18 (목)",
+    title: "본선 발표 및 시상",
+    desc: "워크샵 당일 발표 진행. 실무 적용 시연 및 최종 심사",
+  },
+];
+
+const getStatus = (startDate: Date, endDate: Date): "completed" | "current" | "upcoming" => {
+  const today = new Date();
+  if (today > endDate) return "completed";
+  if (today >= startDate && today <= endDate) return "current";
+  return "upcoming";
+};
 
 const App = () => {
   return (
@@ -142,39 +190,21 @@ const App = () => {
           </div>
 
           <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
-            <TimelineItem
-              date="~ 2.10 (화) 16:00"
-              title="사전 참가 조사 및 팀 구성"
-              desc="Google 설문을 통한 참가 의향 및 성향 조사, AI 기반 팀 매칭 진행"
-              status="completed"
-            />
-            <TimelineItem
-              date="2.20 (금)"
-              title="팀 구성 확정"
-              desc="최종 팀 배정 완료 및 공지"
-              status="completed"
-            />
-            <TimelineItem
-              date="2.23(월)~ 4.30 (목)"
-              title="예선 결과물 제출"
-              desc={`아이디어 제안서(PPT) 제출.\n기존 업무 대비 개선 포인트 및 기대 성과 중심`}
-              status="current"
-            />
-            <TimelineItem
-              date="5.14 (목)"
-              title="예선 결과 발표"
-              desc="블라인드 심사를 통해 상위 10개 팀/개인 선정"
-              status="upcoming"
-            />
-            <TimelineItem
-              date="6.18 (목)"
-              title="본선 발표 및 시상"
-              desc="워크샵 당일 발표 진행. 실무 적용 시연 및 최종 심사"
-              status="upcoming"
-            />
+            {timelineEvents.map((event, idx) => (
+              <TimelineItem
+                key={idx}
+                date={event.date}
+                title={event.title}
+                desc={event.desc}
+                status={getStatus(event.startDate, event.endDate)}
+              />
+            ))}
           </div>
         </div>
       </section>
+
+      {/* Team Section */}
+      <TeamSection />
 
       {/* Detail Guide */}
       <section className="py-24 px-6 relative z-10">
@@ -285,10 +315,63 @@ const App = () => {
 
       </section>
 
-      {/* Survey Status Section */}
-      <section className="py-12 px-6 relative z-10">
+      {/* Survey Status Section - hidden but kept in code */}
+      <section className="py-12 px-6 relative z-10 hidden">
         <div className="max-w-4xl mx-auto">
           <SurveyChart />
+        </div>
+      </section>
+
+      {/* Submission Section */}
+      <section className="py-24 px-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            </span>
+            <span className="text-sm text-indigo-200 font-medium">예선 제출 진행 중 (~4/30)</span>
+          </div>
+
+          <h2 className="text-3xl md:text-5xl font-bold">
+            결과물{" "}
+            <span className="bg-gradient-to-r from-indigo-300 via-white to-purple-300 bg-clip-text text-transparent">
+              제출하기
+            </span>
+          </h2>
+
+          <p className="text-lg text-slate-400 max-w-xl mx-auto break-keep">
+            아이디어 제안서를 완성하셨나요?<br />
+            아래 버튼을 눌러 Google Form으로 예선 결과물을 제출해 주세요.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="https://forms.gle/GgToUXUwYTuPF9LA7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group px-10 py-5 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-2xl flex items-center gap-3 transition-all duration-300 shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:shadow-[0_0_40px_rgba(99,102,241,0.6)] hover:-translate-y-0.5"
+            >
+              <FileText className="w-5 h-5" />
+              결과물 제출 바로가기
+              <ExternalLink className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity" />
+            </a>
+          </div>
+
+          <div className="mt-4 p-6 bg-white/5 rounded-2xl border border-white/10 max-w-lg mx-auto text-left space-y-2">
+            <p className="text-sm text-slate-400 flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+              자유 형식 (PPT 권장, 5~15페이지)
+            </p>
+            <p className="text-sm text-slate-400 flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+              마감: 2026년 4월 30일 (목)
+            </p>
+            <p className="text-sm text-slate-400 flex items-start gap-2">
+              <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
+              팀 · 개인 모두 제출 가능
+            </p>
+          </div>
         </div>
       </section>
 
