@@ -31,8 +31,8 @@ const timelineEvents = [
   },
   {
     startDate: new Date(2026, 1, 23),
-    endDate: new Date(2026, 3, 30, 23, 59),
-    date: "2.23(월)~ 4.30 (목)",
+    endDate: new Date(2026, 3, 15, 23, 59),
+    date: "2.23(월)~ 4.15 (수)",
     title: "예선 결과물 제출",
     desc: `아이디어 제안서(PPT) 제출.\n기존 업무 대비 개선 포인트 및 기대 성과 중심`,
   },
@@ -78,7 +78,7 @@ const App = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
             </span>
             <span className="text-sm text-indigo-200 font-medium">
-              예선 결과물 제출 진행 중 (~4/30)
+              예선 결과물 제출 진행 중 (~4/15)
             </span>
           </div>
 
@@ -207,9 +207,9 @@ const App = () => {
       <TeamSection />
 
       {/* Detail Guide */}
-      <section className="py-24 px-6 relative z-10">
+      <section className="py-24 px-6 relative z-10 overflow-hidden">
         <div className="max-w-4xl mx-auto glass-card rounded-3xl p-8 md:p-12 overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/20 rounded-full blur-[80px] translate-x-1/2" />
 
           <h2 className="text-3xl font-bold mb-8 relative z-10">세부사항안내</h2>
 
@@ -330,7 +330,7 @@ const App = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
             </span>
-            <span className="text-sm text-indigo-200 font-medium">예선 제출 진행 중 (~4/30)</span>
+            <span className="text-sm text-indigo-200 font-medium">예선 제출 진행 중 (~4/15)</span>
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold">
@@ -365,7 +365,7 @@ const App = () => {
             </p>
             <p className="text-sm text-slate-400 flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
-              마감: 2026년 4월 30일 (목)
+              마감: 2026년 4월 15일 (수)
             </p>
             <p className="text-sm text-slate-400 flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0 mt-0.5" />
